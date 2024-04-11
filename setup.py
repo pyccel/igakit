@@ -20,8 +20,12 @@ setup_args = dict(
 
 def setup_package():
     import sys
-    from numpy.distutils.core import setup
-    from numpy.distutils.core import Extension
+    if sys.version_info >= (3, 12):
+        from setuptools import setup
+        from setuptools import Extension
+    else:
+        from numpy.distutils.core import setup
+        from numpy.distutils.core import Extension
     if 'setuptools' in sys.modules:
         setup_args['install_requires'] = ['numpy']
     setup(

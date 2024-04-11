@@ -3,7 +3,10 @@ import sys, os
 import unittest
 
 def getbuilddir():
-    from distutils.util import get_platform
+    if sys.version_info >= (3, 12):
+        from sysconfig import get_platform
+    else:
+        from distutils.util import get_platform
     plat_name = get_platform()
     x, y = sys.version_info[:2]
     buildlib = f"lib.{plat_name}-{x}.{y}"

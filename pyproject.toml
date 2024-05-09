@@ -1,3 +1,19 @@
 [build-system]
-requires = ["setuptools", "numpy"]
-build-backend = "setuptools.build_meta"
+requires = ["meson-python", "numpy"]
+build-backend = "mesonpy"
+
+[project]
+name = 'igakit'
+version = '0.1'
+description = 'Toolkit for IsoGeometric Analysis (IGA)'
+authors = [{name = 'Lisandro Dalcin', email = 'dalcinl@gmail.com'}]
+license = {text = 'Simplified BSD License'}
+keywords = ['FEM', 'IGA']
+readme = 'README.rst'
+
+[project.urls]
+homepage = "https://github.com/dalcinl/igakit"
+documentation = "https://github.com/dalcinl/igakit/blob/master/README.rst"
+source = "https://github.com/dalcinl/igakit"
+download = "https://github.com/dalcinl/igakit/archive/refs/heads/master.zip"
+tracker = "https://github.com/dalcinl/igakit/issues"
